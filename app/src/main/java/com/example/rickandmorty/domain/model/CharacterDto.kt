@@ -1,5 +1,7 @@
 package com.example.rickandmorty.domain.model
 
+
+
 data class CharacterDto(
     val id: Int,
     val name: String,
@@ -16,14 +18,13 @@ data class LocationDto(val name: String)
 
 data class CharacterListResponse(val results: List<CharacterDto>)
 
-fun CharacterDto.toDomain() = CharacterDto(
+fun CharacterDto.toDomain() = Character(
     id = id,
     name = name,
     status = status,
     species = species,
     gender = gender,
-    image = image,
-    origin = origin,
-    location = location,
-    type = TODO()
+    imageUrl = image,
+    origin = origin.name,
+    location = location.name,
 )
